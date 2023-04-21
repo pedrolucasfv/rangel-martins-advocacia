@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import ButtonContact from "@/components/ButtonContact";
 import InfoContent from "@/components/InfoContent";
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
           </div>
         );
       })}
+      <ButtonContact />
     </>
   );
 }
