@@ -3,12 +3,12 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <section className="mx-5">
-      <div className="my-16 animate-pulse">
+      <div className="my-16 animate-pulse flex justify-center items-center">
         <Image
-          src="/img/main-logo.png"
+          src="/img/dark-logo.png"
           alt="logo da rangel e martins advocacia"
-          height={380}
-          width={380}
+          height={300}
+          width={300}
         />
       </div>
       <div className="text-center">

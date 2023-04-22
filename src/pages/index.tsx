@@ -1,5 +1,7 @@
 import Banner from "@/components/Banner";
 import ButtonContact from "@/components/ButtonContact";
+import Coin from "@/components/Coin";
+import Footer from "@/components/Footer";
 import InfoContent from "@/components/InfoContent";
 
 export default function Home() {
@@ -38,13 +40,15 @@ export default function Home() {
         return (
           <div key={index} className="mb-14">
             {index % 2 == 0 ? (
-              <InfoContent {...content} id={`info${index}`} invert/>
+              <InfoContent {...content} id={`info${index}`} invert />
             ) : (
               <InfoContent {...content} id={`info${index}`} />
             )}
           </div>
         );
       })}
+      <Coin />
+      <Footer />
       <ButtonContact />
     </>
   );
