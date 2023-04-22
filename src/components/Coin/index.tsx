@@ -11,10 +11,10 @@ const Coin = () => {
        
         setTimeout(() => {
             coin1.classList.add("[transform:rotateY(180deg)]");
-          }, 1000);
+          }, 600);
         setTimeout(() => {
           coin2.classList.add("[transform:rotateY(180deg)]");
-        }, 1500);
+        }, 1100);
       } else if (
         !entries.some((entry) => entry.isIntersecting) &&
         entries.some((entry) => entry.boundingClientRect.y > 0)

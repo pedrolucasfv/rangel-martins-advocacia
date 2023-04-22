@@ -48,6 +48,7 @@ const InfoContent = ({
       }
       console.log(entries);
     });
+
     let initialFirstClass = "translate-x-full";
     let initialSecondClass = "-translate-x-full";
     let endClass = "translate-x-0";
@@ -64,11 +65,12 @@ const InfoContent = ({
     const text = document.querySelector(`#text-${id}`)!;
 
 
+    if(id!='info0'){
     head.classList.add(initialFirstClass);
     image.classList.add(initialSecondClass);
     text.classList.add(initialFirstClass);
-
     intersectionObserver.observe(image);
+    }
     return () => intersectionObserver.disconnect();
   }, [id, invert]);
 
