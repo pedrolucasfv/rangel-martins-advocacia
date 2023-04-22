@@ -36,6 +36,10 @@ export default function Home() {
       <div className="mb-36">
         <Banner />
       </div>
+      <div className="-mt-24">
+      <Coin />
+      </div>
+
       {infoContents.map((content, index) => {
         return (
           <div key={index} className="mb-14">
@@ -47,8 +51,8 @@ export default function Home() {
           </div>
         );
       })}
-      <Coin />
-      <Footer />
+      
+        <Footer />
       <ButtonContact />
     </>
   );

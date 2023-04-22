@@ -2,33 +2,42 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 const Coin = () => {
-    useEffect(() => {
-        const intersectionObserver = new IntersectionObserver((entries) => {
-          if (
-            entries.some(
-              (entry) =>
-                entry.isIntersecting &&
-                entries.some((entry) => entry.boundingClientRect.y > 0)
-            )
-          ) {
-            coin1.classList.add('[transform:rotateY(180deg)]');
-            setTimeout(() => {
-             coin2.classList.add('[transform:rotateY(180deg)]');
-            }, 1000)
-          }
-        });
-        const coin1 = document.querySelector('#coin1')!;
-        const coin2 = document.querySelector('#coin2')!;
-        intersectionObserver.observe(coin2);
-        return () => intersectionObserver.disconnect();
-      }, []);
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      if (
+        entries.some((entry) => entry.isIntersecting) &&
+        entries.some((entry) => entry.boundingClientRect.y > 0)
+      ) {
+       
+        setTimeout(() => {
+            coin1.classList.add("[transform:rotateY(180deg)]");
+          }, 1000);
+        setTimeout(() => {
+          coin2.classList.add("[transform:rotateY(180deg)]");
+        }, 1500);
+      } else if (
+        !entries.some((entry) => entry.isIntersecting) &&
+        entries.some((entry) => entry.boundingClientRect.y > 0)
+      ) {
+        coin1.classList.remove("[transform:rotateY(180deg)]");
+        coin2.classList.remove("[transform:rotateY(180deg)]");
+      }
+    });
+    const coin1 = document.querySelector("#coin1")!;
+    const coin2 = document.querySelector("#coin2")!;
+    intersectionObserver.observe(coin1);
+    return () => intersectionObserver.disconnect();
+  }, []);
 
-    return (
+  return (
     <section className="mb-10">
       <div className="mx-6">
         <div className="flex flex-col items-center justify-center">
           <div className="my-16 h-52 w-52">
-            <div id="coin1" className="relative h-full w-full transition-all duration-1000 [transform-style:preserve-3d]">
+            <div
+              id="coin1"
+              className="relative h-full w-full transition-all duration-1000 [transform-style:preserve-3d]"
+            >
               <div className="absolute inset-0">
                 <Image
                   src="/img/light-coin.png"
@@ -51,8 +60,11 @@ const Coin = () => {
             </div>
           </div>
 
-          <div className="my-16 h-52 w-52 group">
-            <div id="coin2" className="relative h-full w-full transition-all duration-1000 [transform-style:preserve-3d]">
+          <div className="my-16 h-52 w-52 group -mt-6">
+            <div
+              id="coin2"
+              className="relative h-full w-full transition-all duration-1000 [transform-style:preserve-3d]"
+            >
               <div className="absolute inset-0">
                 <Image
                   src="/img/alt-coin.png"
