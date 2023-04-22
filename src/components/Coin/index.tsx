@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const Coin = () => {
@@ -46,17 +47,14 @@ const Coin = () => {
                   width={200}
                 />
               </div>
-              <a
-                href="/dr-ramon-vargas"
-                className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden]"
-              >
+              <Link href="/dr-ramon-vargas" className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden]">
                 <div className="flex flex-col items-center justify-center mt-16">
                   <h2 className="text-xl">Dr. Ramon Vargas</h2>
                   <p className="text-center text-sm mt-3">
                     Clique aqui para mais inforamções
                   </p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -73,17 +71,14 @@ const Coin = () => {
                   width={200}
                 />
               </div>
-              <a
-                href="/dr-joao-victor-rangel"
-                className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden]"
-              >
+              <Link href="/dr-joao-victor-rangel"className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden]">
                 <div className="flex flex-col items-center justify-center mt-16">
                   <h2 className="text-l">Dr. João Victor Rangel</h2>
                   <p className="text-center text-sm mt-3">
                     Clique aqui para mais inforamções
                   </p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
