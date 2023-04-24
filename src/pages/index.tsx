@@ -39,7 +39,6 @@ export default function Home() {
       <div className="-mt-24">
       <Coin />
       </div>
-
       {infoContents.map((content, index) => {
         return (
           <div key={index} className="mb-14">

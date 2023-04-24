@@ -33,7 +33,7 @@ const Coin = () => {
   return (
     <section className="mb-10">
       <div className="mx-6">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col md:flex-row md:items-end items-center justify-around">
           <div className="my-16 h-52 w-52">
             <div
               id="coin1"
@@ -49,7 +49,7 @@ const Coin = () => {
               </div>
               <Link href="/dr-ramon-vargas" className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden]">
                 <div className="flex flex-col items-center justify-center mt-16">
-                  <h2 className="text-xl">Dr. Ramon Vargas</h2>
+                  <h2 className="text-xl">Dr. Ramon Martins</h2>
                   <p className="text-center text-sm mt-3">
                     Clique aqui para mais inforamções
                   </p>

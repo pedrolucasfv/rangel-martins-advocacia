@@ -33,6 +33,8 @@ const InfoContent = ({
         text.classList.remove(initialFirstClass);
         text.classList.add(endClass);
 
+        info.classList.remove("blur-md");
+        info.classList.add("blur-none");
       } else if (
         !entries.some((entry) => entry.isIntersecting) &&
         entries.some((entry) => entry.boundingClientRect.y > 0)
@@ -45,6 +47,9 @@ const InfoContent = ({
 
         text.classList.remove(endClass);
         text.classList.add(initialFirstClass);
+
+        info.classList.remove("blur-none");
+        info.classList.add("blur-md");
       }
       console.log(entries);
     });
@@ -64,23 +69,47 @@ const InfoContent = ({
     const image = document.querySelector(`#image-${id}`)!;
     const text = document.querySelector(`#text-${id}`)!;
 
-
-    if(id!='info0'){
-    head.classList.add(initialFirstClass);
-    image.classList.add(initialSecondClass);
-    text.classList.add(initialFirstClass);
-    intersectionObserver.observe(image);
+    if (id != "info0") {
+      info.classList.add("blur-md");
+      head.classList.add(initialFirstClass);
+      image.classList.add(initialSecondClass);
+      text.classList.add(initialFirstClass);
+      intersectionObserver.observe(info);
     }
     return () => intersectionObserver.disconnect();
   }, [id, invert]);
 
   return (
-    <section className="mx-5 transition-transform duration-700 " id={id}>
-      <h3 id={`head-${id}`} className="text-2xl border-b-2 pb-2 border-yellow-500 transition-transform duration-700">{title}</h3>
-      <div id={`image-${id}`} className="my-5 transition-transform duration-700">
-        <Image className="rounded-xl border-2 border-slate-600" src={image} alt={altImage} height={380} width={380} />
+    <section
+      className="mx-5 transition-blur duration-700 md:w-3/5 md:m-auto"
+      id={id}
+    >
+      <h3
+        id={`head-${id}`}
+        className="text-2xl border-b-2 pb-2 border-yellow-500 transition-transform duration-700 md:transition-none md:duration-0"
+      >
+        {title}
+      </h3>
+      <div className="md:mt-3 md:flex md:justify-between items-center">
+        <div
+          id={`image-${id}`}
+          className="my-5 transition-transform duration-700 md:transition-none md:duration-0 h-80 w-84 md:h-40 md:w-64 relative"
+        >
+          <Image
+            className="rounded-xl border-2 border-slate-600"
+            src={image}
+            alt={altImage}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+        <p
+          id={`text-${id}`}
+          className="text-xl leading-relaxed text-center transition-transform duration-700 md:transition-none md:duration-0 md:w-3/5"
+        >
+          {text}
+        </p>
       </div>
-      <p id={`text-${id}`} className="text-xl leading-relaxed text-center transition-transform duration-700">{text}</p>
     </section>
   );
 };
