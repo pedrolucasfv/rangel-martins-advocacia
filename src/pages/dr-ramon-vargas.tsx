@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function DrRamon() {
   return (
-    <div className="">
+    <div className="min-h-screen">
       <div
         className="flex justify-between items-center px-5 mb-4 bg-white border-b-4 border-yellow-500 md:px-40 2xl:px-80"
       >
@@ -22,7 +22,7 @@ export default function DrRamon() {
           Voltar
         </Link>
       </div>
-      <div className="md:flex md:flex-row md:justify-center items-center mx-5">
+      <div className="md:flex md:flex-row md:justify-center items-center mx-5 2xl:mt-40">
         <div className="md:mr-40">
           <h3 className="text-3xl border-b-2 pb-2 border-yellow-500 font-semibold">
             Dr. Ramon Vargas Martins

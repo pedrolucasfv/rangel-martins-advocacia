@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function DrRamon() {
   return (
-    <div className="">
+    <div className="min-h-screen">
       <div
         className="flex justify-between items-center px-5 mb-4 [background:#5A3813] bg-gradient-r to-blue-500 border-b-4 border-yellow-500"
       >
