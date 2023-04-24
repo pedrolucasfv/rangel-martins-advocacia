@@ -32,7 +32,7 @@ export default function Home() {
     },
   ];
   return (
-    <>
+    <div className="max-w-7xl m-auto">
       <div className="mb-36">
         <Banner />
       </div>
@@ -43,7 +43,7 @@ export default function Home() {
         return (
           <div key={index} className="mb-14">
             {index % 2 == 0 ? (
-              <InfoContent {...content} id={`info${index}`} invert />
+              <InfoContent {...content} id={`info${index}`} />
             ) : (
               <InfoContent {...content} id={`info${index}`} />
             )}
@@ -53,6 +53,6 @@ export default function Home() {
       
         <Footer />
       <ButtonContact />
-    </>
+    </div>
   );
 }

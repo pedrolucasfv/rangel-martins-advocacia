@@ -7,7 +7,6 @@ export type InfoContentProps = {
   altImage: string;
   text: string;
   id: string;
-  invert?: boolean;
 };
 
 const InfoContent = ({
@@ -16,7 +15,6 @@ const InfoContent = ({
   title,
   altImage,
   id,
-  invert = false,
 }: InfoContentProps) => {
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver((entries) => {
@@ -24,64 +22,49 @@ const InfoContent = ({
         entries.some((entry) => entry.isIntersecting) &&
         entries.some((entry) => entry.boundingClientRect.y > 0)
       ) {
-        head.classList.remove(initialFirstClass);
-        head.classList.add(endClass);
+        head.classList.remove(headClass.initial);
+        head.classList.add(headClass.end);
 
-        image.classList.remove(initialSecondClass);
-        image.classList.add(endClass);
+        setTimeout(() => {
+          image.classList.add("[transform:rotateX(180deg)]");
+        }, 650);
 
-        text.classList.remove(initialFirstClass);
-        text.classList.add(endClass);
+        info.classList.remove("opacity-0");
+        info.classList.add("opacity-100");
 
-        info.classList.remove("blur-md");
-        info.classList.add("blur-none");
       } else if (
         !entries.some((entry) => entry.isIntersecting) &&
         entries.some((entry) => entry.boundingClientRect.y > 0)
       ) {
-        head.classList.remove(endClass);
-        head.classList.add(initialFirstClass);
+        head.classList.remove(headClass.end);
+        head.classList.add(headClass.initial);
 
-        image.classList.remove(endClass);
-        image.classList.add(initialSecondClass);
+        image.classList.remove("[transform:rotateX(180deg)]");
 
-        text.classList.remove(endClass);
-        text.classList.add(initialFirstClass);
-
-        info.classList.remove("blur-none");
-        info.classList.add("blur-md");
+        info.classList.remove("opacity-100");
+        info.classList.add("opacity-0");
       }
       console.log(entries);
     });
 
-    let initialFirstClass = "translate-x-full";
-    let initialSecondClass = "-translate-x-full";
-    let endClass = "translate-x-0";
-
-    if (invert) {
-      initialFirstClass = "-translate-x-full";
-      initialSecondClass = "translate-x-full";
-      endClass = "translate-x-50";
+    const headClass = {
+      initial: "-translate-x-full",
+      end: "translate-x-0"
     }
 
     const info = document.querySelector(`#${id}`)!;
     const head = document.querySelector(`#head-${id}`)!;
     const image = document.querySelector(`#image-${id}`)!;
-    const text = document.querySelector(`#text-${id}`)!;
 
-    if (id != "info0") {
-      info.classList.add("blur-md");
-      head.classList.add(initialFirstClass);
-      image.classList.add(initialSecondClass);
-      text.classList.add(initialFirstClass);
-      intersectionObserver.observe(info);
-    }
+    info.classList.add("opacity-0");
+    head.classList.add(headClass.initial);
+    intersectionObserver.observe(info);
     return () => intersectionObserver.disconnect();
-  }, [id, invert]);
+  }, [id]);
 
   return (
     <section
-      className="mx-5 transition-blur duration-700 md:w-3/5 md:m-auto"
+      className="mx-5 transition-opacity duration-700 md:w-3/5 md:m-auto"
       id={id}
     >
       <h3
@@ -90,25 +73,31 @@ const InfoContent = ({
       >
         {title}
       </h3>
-      <div className="md:mt-3 md:flex md:justify-between items-center">
+      <div className="md:flex md:justify-between items-center">
         <div
           id={`image-${id}`}
-          className="my-5 transition-transform duration-700 md:transition-none md:duration-0 h-80 w-84 md:h-40 md:w-64 relative"
+          className="my-7 relative h-60 w-84 md:h-40 md:w-64 transition-all duration-1000 [transform-style:preserve-3d]"
         >
-          <Image
-            className="rounded-xl border-2 border-slate-600"
-            src={image}
-            alt={altImage}
-            layout="fill"
-            objectFit="cover"
-          />
+          <div className="absolute inset-0 bg-black">
+            <Image
+              className="rounded-xl border-2 border-slate-600"
+              src="/img/dark-coin.png"
+              alt={altImage}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/80 [transform:rotateX(180deg)] [backface-visibility:hidden]">
+            <Image
+              className="rounded-xl border-2 border-slate-600"
+              src={image}
+              alt={altImage}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
-        <p
-          id={`text-${id}`}
-          className="text-xl leading-relaxed text-center transition-transform duration-700 md:transition-none md:duration-0 md:w-3/5"
-        >
-          {text}
-        </p>
+          <p className="text-xl leading-relaxed text-center md:w-3/5">{text}</p>
       </div>
     </section>
   );

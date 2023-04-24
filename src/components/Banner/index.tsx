@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <section className="mx-5">
+    <section className="max-w-4xl mx-5 md:m-auto">
       <div className="my-16 h-80 w-80 relative animate-pulse mx-auto">
             <Image
               className="my-5 animate-pulse"
