@@ -1,3 +1,4 @@
+import AreasContent from "@/components/AreasContent";
 import Banner from "@/components/Banner";
 import ButtonContact from "@/components/ButtonContact";
 import Coin from "@/components/Coin";
@@ -7,26 +8,26 @@ import InfoContent from "@/components/InfoContent";
 export default function Home() {
   const infoContents = [
     {
-      title: "Consulta Inicial",
-      text: "A primeira etapa para buscar auxílio jurídico é apresentar os fatos ao profissional. Desta forma, em busca de uma solução rápida e eficaz, propomos um encontro presencial ou virtual para expor cada detalhe da demanda. ",
+      title: "Direito de Família",
+      text: "Em direito de família, ajudamos nossos clientes em questões como divórcio, guarda dos filhos, pensão alimentícia, inventário e partilha de bens. Nossa equipe de advogados altamente qualificados está aqui para ajudá-lo a navegar por essas questões difíceis e encontrar as melhores soluções para sua família. ",
       altImage: "escrevendo no papel",
       image: "/img/advogado-assinando.jpg",
     },
     {
-      title: "Consultoria jurídica",
-      text: "Caso precise de conselhos ou busca medidas de prevenção em relação a uma questão jurídica, estamos aptos e preparados a te auxiliar. ",
+      title: "Direito Previdenciário",
+      text: "No direito previdenciário, nossos advogados têm vasta experiência em lidar com questões relacionadas a aposentadorias, pensões, auxílio-doença, invalidez e outros benefícios previdenciários. Se você está tendo problemas para obter os benefícios que tem direito, nossa equipe está pronta para ajudá-lo a obter o que é justo. ",
       altImage: "escrevendo no papel",
       image: "/img/advogado-assinando.jpg",
     },
     {
-      title: "Análise jurídica",
-      text: "Já possui um processo judicial e quer saber do andamento ou obter mais informações a respeito? Trabalhamos também com análise e investigação de processos. ",
+      title: "Direito Criminal",
+      text: "Na área de direito criminal, oferecemos defesa para clientes em casos de acusações criminais, incluindo crimes de tráfico de drogas, roubo, furto, violência doméstica, crimes contra vida, entre outros. Nossa equipe altamente qualificada tem um histórico comprovado de obtenção de resultados positivos para nossos clientes em todas as fases do processo criminal.",
       altImage: "escrevendo no papel",
       image: "/img/advogado-assinando.jpg",
     },
     {
-      title: "Audiência de Custódia ",
-      text: "Nesta etapa, busca-se auxiliar e representar o preso durante a audiência de custódia, entrevistando-o bem como realizando os requerimentos necessários para resguardar os seus direitos.",
+      title: "Direito Cível",
+      text: " Nosso escritório de advocacia oferece atendimento personalizado e eficaz na área cível, com soluções adequadas às necessidades individuais dos clientes. Protegemos direitos e interesses em questões de disputas contratuais, problemas de propriedade e responsabilidade civil, entre outros. Nossa equipe experiente oferece orientação clara em todas as etapas do processo, trabalhando em estreita colaboração com os clientes para alcançar os melhores resultados possíveis em suas questões jurídicas.",
       altImage: "escrevendo no papel",
       image: "/img/advogado-assinando.jpg",
     },
@@ -36,9 +37,11 @@ export default function Home() {
       <div className="mb-36">
         <Banner />
       </div>
+
       <div className="-mt-24">
-      <Coin />
+        <Coin />
       </div>
+      <AreasContent />
       {infoContents.map((content, index) => {
         return (
           <div key={index} className="mb-14">
@@ -50,8 +53,8 @@ export default function Home() {
           </div>
         );
       })}
-      
-        <Footer />
+
+      <Footer />
       <ButtonContact />
     </div>
   );

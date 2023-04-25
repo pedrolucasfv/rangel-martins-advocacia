@@ -4,9 +4,7 @@ import Link from "next/link";
 export default function DrRamon() {
   return (
     <div className="min-h-screen">
-      <div
-        className="flex justify-between items-center px-5 mb-4 bg-white border-b-4 border-yellow-500 md:px-40 2xl:px-80"
-      >
+      <div className="flex justify-between items-center px-5 mb-4 bg-white border-b-4 border-yellow-500 md:px-40 2xl:px-80">
         <div className="h-24 w-24 relative animate-pulse">
           <Image
             src="/img/light-logo.png"
@@ -30,7 +28,7 @@ export default function DrRamon() {
           <div className="my-5">
             <Image
               className="rounded-2xl border-2 border-slate-600"
-              src="/img/perfil-teste.jpg"
+              src="/img/foto-ramon.jpg"
               alt="Dr Ramon advogado de Bom jesus"
               height={380}
               width={380}
@@ -46,14 +44,20 @@ export default function DrRamon() {
             <span className="font-bold">Intituição:</span> Faculdade
             metropolitana São Carlos
           </p>
+          <p className="text-l mt-2">
+            Aprovado no XXXIV Exame da Ordem dos Advogados do Brasil
+          </p>
           <h3 className="text-3xl border-t border-yellow-500 mt-3 pt-2 text-yellow-500">
             Contato
           </h3>
           <p className="text-l mt-2">
-            <span className="font-bold">Telefone:</span> (22) 99844-2948
+            <span className="font-bold">Telefone:</span> (22) 99746-7588
           </p>
           <p className="text-l">
-            <span className="font-bold">Email:</span> ramondabl@gmail.com
+            <span className="font-bold">Instagram:</span> <Link href="/">ramonvargas01</Link>
+          </p>
+          <p className="text-l">
+            <span className="font-bold">Email:</span> ramonvargasm3@gmail.com
           </p>
           <h3 className="text-3xl border-t border-yellow-500 mt-3 pt-2 text-yellow-500">
             Horário de atendimento

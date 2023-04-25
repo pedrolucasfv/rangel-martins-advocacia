@@ -26,11 +26,11 @@ const InfoContent = ({
         head.classList.add(headClass.end);
 
         setTimeout(() => {
-          image.classList.add("[transform:rotateX(180deg)]");
+          image.classList.add(imageClass);
         }, 650);
 
-        info.classList.remove("opacity-0");
-        info.classList.add("opacity-100");
+        info.classList.remove(infoClass.initial);
+        info.classList.add(infoClass.end);
 
       } else if (
         !entries.some((entry) => entry.isIntersecting) &&
@@ -39,24 +39,30 @@ const InfoContent = ({
         head.classList.remove(headClass.end);
         head.classList.add(headClass.initial);
 
-        image.classList.remove("[transform:rotateX(180deg)]");
+        image.classList.remove(imageClass);
 
-        info.classList.remove("opacity-100");
-        info.classList.add("opacity-0");
+        info.classList.remove(infoClass.end);
+        info.classList.add(infoClass.initial);
       }
-      console.log(entries);
     });
 
+
+    const infoClass = {
+      initial: "opacity-0",
+      end: "opacity-100"
+    }
     const headClass = {
       initial: "-translate-x-full",
       end: "translate-x-0"
     }
+    const imageClass = "[transform:rotateX(180deg)]"
+    
 
     const info = document.querySelector(`#${id}`)!;
     const head = document.querySelector(`#head-${id}`)!;
     const image = document.querySelector(`#image-${id}`)!;
 
-    info.classList.add("opacity-0");
+    info.classList.add(infoClass.initial);
     head.classList.add(headClass.initial);
     intersectionObserver.observe(info);
     return () => intersectionObserver.disconnect();
