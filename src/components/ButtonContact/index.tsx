@@ -32,7 +32,7 @@ const ButtonContact = () => {
           id="contact1"
           className="bg-green-600 p-3 rounded-xl border-2 border-white mb-4 transition-transform duration-700 translate-x-60"
         >
-          <Link href="https://wa.me/5522988148044">Dr. João Victor Rangel</Link>
+          <Link href="https://wa.me/5522988148044">Dr. João Vitor Rangel</Link>
         </div>
         <div
           id="contact2"
