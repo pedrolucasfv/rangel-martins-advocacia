@@ -71,9 +71,9 @@ const Coin = () => {
                   width={200}
                 />
               </div>
-              <Link href="/dr-joao-victor-rangel"className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden] border">
+              <Link href="/dr-joao-vitor-rangel" className="mb-2 mr-2 absolute inset-0 bg-black/80 rounded-full [transform:rotateY(180deg)] cursor-pointer [backface-visibility:hidden] border">
                 <div className="flex flex-col items-center justify-center mt-16">
-                  <h2 className="text-l">Dr. João Victor Rangel</h2>
+                  <h2 className="text-l">Dr. João Vitor Rangel</h2>
                   <p className="text-center text-sm mt-3">
                     Clique aqui para mais inforamções
                   </p>

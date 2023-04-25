@@ -20,7 +20,7 @@ export default function DrRamon() {
           Voltar
         </Link>
       </div>
-      <div className="md:flex md:flex-row md:justify-center items-center mx-5 2xl:mt-40">
+      <div className="md:flex md:flex-row md:justify-center items-center mx-5 2xl:mt-20">
         <div className="md:mr-40">
           <h3 className="text-3xl border-b-2 pb-2 border-yellow-500 font-semibold">
           Dr. João Vitor Rangel
@@ -54,7 +54,7 @@ export default function DrRamon() {
             <span className="font-bold pr-2">Telefone:</span> (22) 98814-8044
           </p>
           <p className="text-l">
-            <span className="font-bold pr-2">Instagram:</span> <Link className="text-yellow-500" href="/"> @advjoaorangel</Link>
+            <span className="font-bold pr-2">Instagram:</span> <Link className="text-yellow-500" href="https://www.instagram.com/advjoaorangel/"> @advjoaorangel</Link>
           </p>
           <p className="text-l">
             <span className="font-bold pr-2">Email:</span> jvpraes@hotmail.com

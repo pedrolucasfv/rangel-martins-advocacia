@@ -20,7 +20,7 @@ export default function DrRamon() {
           Voltar
         </Link>
       </div>
-      <div className="md:flex md:flex-row md:justify-center items-center mx-5 2xl:mt-40">
+      <div className="md:flex md:flex-row md:justify-center items-center mx-5 2xl:mt-20">
         <div className="md:mr-40">
           <h3 className="text-3xl border-b-2 pb-2 border-yellow-500 font-semibold">
             Dr. Ramon Vargas Martins
@@ -54,7 +54,7 @@ export default function DrRamon() {
             <span className="font-bold">Telefone:</span> (22) 99746-7588
           </p>
           <p className="text-l">
-            <span className="font-bold">Instagram:</span> <Link href="/">ramonvargas01</Link>
+            <span className="font-bold">Instagram:</span> <Link className="text-yellow-500" href="https://www.instagram.com/ramonvargas01">@ramonvargas01</Link>
           </p>
           <p className="text-l">
             <span className="font-bold">Email:</span> ramonvargasm3@gmail.com

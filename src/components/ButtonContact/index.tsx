@@ -1,21 +1,27 @@
+import Link from "next/link";
+import { useState } from "react";
+
 const ButtonContact = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const handleContactButtons = (open: boolean) => {
     const contact1 = document.querySelector("#contact1")!;
     const contact2 = document.querySelector("#contact2")!;
     if (open) {
+      setIsOpen(true)
       contact2.classList.remove("translate-x-60");
       contact2.classList.add("translate-x-0");
       setTimeout(() => {
-      contact1.classList.remove("translate-x-60");
-      contact1.classList.add("translate-x-0");
+        contact1.classList.remove("translate-x-60");
+        contact1.classList.add("translate-x-0");
       }, 200);
     } else {
+      setIsOpen(false)
       contact1.classList.remove("translate-x-0");
       contact1.classList.add("translate-x-60");
       setTimeout(() => {
         contact2.classList.remove("translate-x-0");
         contact2.classList.add("translate-x-60");
-        }, 200);
+      }, 200);
     }
   };
 
@@ -26,17 +32,17 @@ const ButtonContact = () => {
           id="contact1"
           className="bg-green-600 p-3 rounded-xl border-2 border-white mb-4 transition-transform duration-700 translate-x-60"
         >
-          Dr. João Victor Rangel
+          <Link href="https://wa.me/5522988148044">Dr. João Victor Rangel</Link>
         </div>
         <div
           id="contact2"
           className="bg-green-600 p-3 rounded-xl border-2 border-white flex justify-center transition-transform duration-700 translate-x-60"
         >
-          Dr. Ramon Martins
+          <Link href="https://wa.me/5522997467588">Dr. Ramon Martins</Link>
         </div>
       </div>
       <div
-        onClick={() => handleContactButtons(true)}
+        onClick={() => handleContactButtons(!isOpen)}
         className="bg-green-600 h-16 w-16 rounded-full flex justify-center items-center"
       >
         <svg

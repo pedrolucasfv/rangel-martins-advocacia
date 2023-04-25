@@ -70,7 +70,7 @@ const InfoContent = ({
 
   return (
     <section
-      className="mx-5 transition-opacity duration-700 md:w-3/5 md:m-auto"
+      className="mx-5 transition-opacity duration-700 md:w-4/5 md:m-auto"
       id={id}
     >
       <h3
@@ -103,7 +103,7 @@ const InfoContent = ({
             />
           </div>
         </div>
-          <p className="text-xl leading-relaxed text-center md:w-3/5">{text}</p>
+          <p className="text-xl leading-relaxed text-center md:w-3/5 md:mt-10">{text}</p>
       </div>
     </section>
   );
