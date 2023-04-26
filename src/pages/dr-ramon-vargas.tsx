@@ -41,8 +41,8 @@ export default function DrRamon() {
             <span className="font-bold">Curso:</span> Bacharel em direito
           </p>
           <p className="text-l leading-relaxed">
-            <span className="font-bold">Intituição:</span> Faculdade
-            metropolitana São Carlos
+            <span className="font-bold">Instituição:</span> Faculdade
+            Metropolitana São Carlos
           </p>
           <p className="text-l mt-2">
             Aprovado no XXXIV Exame da Ordem dos Advogados do Brasil
