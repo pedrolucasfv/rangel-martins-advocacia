@@ -1,7 +1,7 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import NextNProgress from "nextjs-progressbar";
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import NextNProgress from 'nextjs-progressbar';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -22,6 +22,20 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Escritório de advocacia Rangel & Martins."
         />
+        {/* Google Tag Manager */}
+        <script>
+          {(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-P4GVDG6R')}
+        </script>
+        {/* End Google Tag Manager */}
       </Head>
       <NextNProgress
         color="#eab308"
@@ -31,6 +45,16 @@ export default function App({ Component, pageProps }: AppProps) {
         showOnShallow={true}
       />
       <Component {...pageProps} />
+      {/* Google Tag Manager (noscript) */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-P4GVDG6R"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        ></iframe>
+      </noscript>
+      {/* End Google Tag Manager (noscript) */}
     </>
   );
 }
