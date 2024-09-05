@@ -43,7 +43,7 @@ const ButtonContact = () => {
       </div>
       <div
         onClick={() => handleContactButtons(!isOpen)}
-        className="bg-green-600 h-16 w-16 rounded-full flex justify-center items-center"
+        className="bg-green-600 h-16 w-16 rounded-full flex justify-center items-center cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
